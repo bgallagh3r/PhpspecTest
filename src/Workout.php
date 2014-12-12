@@ -13,7 +13,7 @@ class Workout
      *
      * @return float
      */
-    public function calculateBodyDensity()
+    public function calculateBodyDensityFloat()
     {
         $sum = $this->measurements['caliper_chest']
             + $this->measurements['caliper_abdomen']
@@ -23,4 +23,9 @@ class Workout
 
         return $bodyDensity;
     }
+
+    public function calculateBodyDensityInt() { return intval($this->calculateBodyDensityFloat());}
+
+    public function calculateBodyDensityString() { return strval($this->calculateBodyDensityFloat() ); }
+
 }

@@ -17,7 +17,13 @@ class WorkoutSpec extends ObjectBehavior
         $this->shouldHaveType('Workout');
     }
 
-    function it_calculates_body_density() {
-        $this->calculateBodyDensity()->shouldReturn(0.995089);
+    function it_calculates_body_density_from_float() {
+        $this->calculateBodyDensityFloat()->shouldReturn(0.995089);
+    }
+    function it_calculates_body_density_from_integer() {
+        $this->calculateBodyDensityInt()->shouldReturn(0);
+    }
+    function it_calculates_body_density_from_string() {
+        $this->calculateBodyDensityString()->shouldReturn("0.995089");
     }
 }
